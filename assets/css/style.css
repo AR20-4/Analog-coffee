@@ -73,7 +73,7 @@ body {
 
 h1, h2, h3 {
   color: var(--title-color);
-  font-weight: var(  --font-medium);
+  font-weight: var(--font-medium);
 }
 
 ul {
@@ -113,6 +113,20 @@ img {
 
 .main {
   overflow: hidden;
+}
+
+.shape{
+    filter: blur(20px);
+    border-radius: 50%;
+}
+
+.shape__big{
+    width: 500px;
+    height: 500px;
+}
+.shape__small{
+    width: 300px;
+    height: 300px;
 }
 
 /*=============== HEADER & NAV ===============*/
@@ -213,7 +227,10 @@ img {
 
 
 /* Change background header */
-
+.scroll-header{
+    background-color: #D1AE53;
+    box-shadow: 0 2px 4px rgba(97, 97, 97, 0.5);
+}
 
 /* Active link */
 
@@ -227,7 +244,7 @@ img {
 
 .home__container{
     position: relative;
-    padding-top: 4rem;
+    padding-top: 2rem;
     row-gap: 3rem;
 }
 
@@ -238,6 +255,35 @@ img {
 .home__title{
     font-size: Var(--h1-font-size);
     margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.home__subtitle{
+    font-size: var(--h3-font-size);
+    letter-spacing: 1px;
+}
+
+.home__img{
+    width: 550px;
+    margin-top: -25px;
+    justify-self: center;
+    border-radius: .5rem;
+}
+
+.home .shape__big,
+.home .shape__small{
+position: absolute;
+}
+
+.home .shape__big{
+    background-color: #bd606f;opacity:0.6;
+    top: 3rem;
+}
+
+.home .shape__small{
+    background-color: #e7e7e7;opacity:0.6;
+    right: 6rem;
+    bottom: 2rem;
 }
 
 
@@ -246,8 +292,63 @@ img {
 
 /*=============== BUTTON ===============*/
 
+.button{
+    display: inline-block;
+    background-color: #78A39D;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    font-size: var(--normal-font-size);
+    transition: .3s;
+}
+
+.button:hover{
+    background-color: var(--first-color);
+}
 
 /*=============== ABOUT ===============*/
+
+.about__container{
+    row-gap: 6rem;
+}
+
+.about__group{
+    position: relative;
+}
+
+.about__img{
+    width: 310px;
+    border-radius: .5rem;
+}
+
+.about__card{
+    width: 180px;
+    position: absolute;
+    right: 0;
+    bottom: -2.5rem;
+    background-color: #BEB8B9; opacity: .5;
+    backdrop-filter: blur(16px);
+    padding: 1rem .75rem;
+    text-align: center;
+    border-radius: 1.25rem;
+}
+
+.about__card-title{
+    font-size: var(--h3-font-size);
+    margin-bottom: .5rem;
+}
+
+.about__card-description{
+    font-size: var(--smaller-font-size);
+}
+
+.about__title{
+    text-align: initial;
+    margin-bottom: 2rem;
+}
+
+
+
 
 
 /*=============== BEANS ===============*/
@@ -283,8 +384,69 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
+@media screen and (max-width: 320px){
+    .container{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .home__img{
+        column-gap: 2rem;
+    }
+}
+
+.about__card{
+    width: 150px;
+}
+
 
 /* For medium devices */
 
+@media screen and (min-width: 576px) {
+    .about__group{
+        width: 350px;
+        justify-self: center;
+    }
+    
+}
+
+
+/* For medium devices */
+
+@media screen and (min-width: 767px) {
+    .section{
+        padding: 7rem 0 2rem;
+    }
+
+    .nav{
+        height: cal(var(--header-height) + 1.5rem);
+    }
+
+    .nav__toggle,
+    .nav__close{
+        display: none;
+    }
+
+    .nav__logo{
+        padding-top: 2rem;
+    }
+    
+    .nav__list{
+        flex-direction: row;
+        column-gap: 4rem;
+        padding-top: 2rem;
+        padding-right: 0;
+    }
+
+    .nav__link{
+        font-size: var(--normal-font-size);
+        text-transform: initial;
+    }
+
+    .about__container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
 
 /* For large devices */
